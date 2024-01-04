@@ -48,5 +48,35 @@ git remote add origin https://github.com/HarryOkk/Typora-.git
 git push -u origin main
 ```
 
+## 2. 新建仓库之后后续如何提交和推送？
 
+**第一步还是在文件目录下本地打开'git bash'**
+
+**键入以下命令：**
+
+```shell
+# 将所有文件变更添加到提交
+git add .
+# 提交变更到本地仓库，注意加入本地提交日志的描述
+git commit -m '本次提交日志的描述'
+# 推送到远端仓库（github）
+git push
+```
+
+## 3. 如何新建分支、切换分支，并将本地新建的分支提交到远端
+
+**第一步还是在文件目录下本地打开**'git bash'
+
+键入以下命令：
+
+```shell
+# 在本地仓库创建新分支
+git branch 分支名
+# 将工作目录切换到新创建的分支，默认复制旧分支的内容到新分支
+git checkout 分支名
+# 将所有内容添加到变更
+git add .
+# 由于从旧分支继承，本地内容可以直接提交，注意命令中加入origin，自动为gihub也创建对应的分支
+git push origin main
+```
 
