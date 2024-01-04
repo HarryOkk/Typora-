@@ -1,14 +1,18 @@
 # 包含comm.c和comm.h
 
->C代码无非几个重要内容：
+>**C代码无非几个重要内容：**
 >
 >​	1.结构类型定义
 >
->​	2.变量定义和常量定义：数据类型：变量名称含义
+>​	2.变量定义和常量定义：形式为**数据类型：变量名称含义**
 >
 >​	3.功能函数声明
 >
 >​	4.业务代码（函数）声明
+>
+>**C代码的编写思考方式**：指针是拿到值得方式。两大板块：如何组织和拿到值、如何处理值。
+
+以comm.c文件为例：
 
 ## 1. 结构类型定义
 
@@ -31,7 +35,7 @@ enum if_name
 };
 ```
 
-### 枚举类型：功能定义
+### 枚举类型：功能定义（有哪些功能的通讯）
 
 ```c
 enum if_func
@@ -61,7 +65,6 @@ enum if_func
 	IF_FUNC_422_2_TEST_MODE,
 	IF_FUNC_BA_IC, /* 通过485BA板实现IC卡 */
 	IF_FUNC_ESC, /* 扶梯 */	
-	
 	IF_FUNC_DIGLINK_JSON, /* 测试：使用串口进行JSON格式通信 */
 };
 ```
@@ -257,6 +260,7 @@ typedef struct
 ### 结构体数组：功能定义表（用于保存功能的回调）
 
 ```c
+/*枚举对象和字符串常量对象，应该是用来打印日志的？*/
 value_name_t if_func_def_table[] =
 {
 	{ IF_FUNC_NONE, "none"},
@@ -345,6 +349,7 @@ void comm_handle_test_resp(void *self, enum comm_data_type data_type, enum comm_
         //非二进制和JSON对象直接输出到日志
 		default:
 			log_v("data_type: %d, ev_type: %d", data_type, ev_type);
+            //将数据以16进制形式输出到日志文件
 			elog_hexdump("comm test", 16, data, len);
 			break;
 	}
@@ -369,6 +374,7 @@ void comm_set_response_cb(enum comm_obj comm_dev, void *parent, comm_response_cb
 void comm_resp_init(void)
 {
 	memset(&comm_mgt, 0, sizeof(comm_mgt_t));
+    //初始化过程中给测试对象赋初值
 	comm_set_response_cb(COMM_OBJ_TEST, NULL, comm_handle_test_resp);
 }
 ```
@@ -376,16 +382,20 @@ void comm_resp_init(void)
 ### 通讯对象的事件处理
 
 ```c
-/*根据通讯对象调用对应的回调函数*/
+/*根据通讯对象调用对应的回调函数
+这么说回调函数对上下行的消息都要处理？*/
 void comm_handle_response(enum comm_obj comm_dev, enum comm_data_type data_type, enum comm_ev_type ev_type, uint8_t *data, uint16_t len)
 {
+    //通过指针访问函数表，拿到通讯事件对应保存得回调函数
 	comm_resp_t *comm_resp = &(comm_mgt.comm_resp[comm_dev]);
 
+    //如果回调函数不为空，则调用回调函数处理数据
 	if (comm_resp->resp_cb != NULL)
 	{
 		comm_resp->resp_cb(comm_resp->parent, data_type, ev_type, data, len);
 	}
 #if 1
+    //如果回调函数为空，向标准出错打印错误
 	else
 	{
 		fprintf(stderr, "[comm] handle resp error: comm_dev %d cb not set\n", comm_dev);
