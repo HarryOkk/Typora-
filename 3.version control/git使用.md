@@ -80,3 +80,34 @@ git add .
 git push origin main
 ```
 
+## 4. 常见问题
+
+#### 1. PC本地git代理端口号与远端不一致，导致访问github仓库地址失败
+
+**现象：**
+
+![image-20240104104605319](D:\my_documents\学习文件\笔记\图片\image-20240104104605319.png)
+
+```shell
+10010010@SMEC22-0152 MINGW64 /d/my_documents/学习文件/笔记 (master)
+$ git push
+fatal: unable to access 'https://github.com/HarryOkk/Typora-.git/': HTTP/2 stream 1 was not closed cleanly before end of the underlying stream
+```
+
+****
+
+**解决办法：**
+
+优秀博文：[解决使用git时遇到Failed to connect to github.com port 443 after 21090 ms: Couldn‘t connect to server-CSDN博客](https://blog.csdn.net/qq_40296909/article/details/134285451)
+
+该问题可能由于梯子上网VPN代理异常导致，需要在git本地取消代理，之后再进行push
+
+```shell
+#取消https协议的代理
+git config --global --unset https.proxy
+#重新提交变更并推送
+git add .
+git commit -m '真的是太棒啦！'
+git push
+```
+
