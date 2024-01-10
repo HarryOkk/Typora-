@@ -6,7 +6,7 @@
 
 **github创建仓库**
 
-![image-20240104100403751](D:\my_documents\学习文件\笔记\图片\image-20240104100403751.png)
+![image-20240- 104100403751](D:\my_documents\学习文件\笔记\图片\image-20240104100403751.png)
 
 ---
 
@@ -109,5 +109,37 @@ git config --global --unset https.proxy
 git add .
 git commit -m '真的是太棒啦！'
 git push
+```
+
+#### 2. 上传的单个文件过大导致上传失败
+
+github显示上传内容单个文件的大小，单个文件大小不能超过50M
+
+**报错显示：**
+
+```shell
+remote: warning: File 4.IDE工具/4.1交叉编译/1. eclipse安装与使用/jre-8u191-windows-x64.exe is 71.16 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+```
+
+#### 3. 换行替换警告
+
+**解释：**
+
+CR/LF是不同操作系统上使用的换行符：
+
+- CR（CarriageReturn回车'\r'）：回到一行的开头，ASCII代码是13
+- LF（LineFeed换行'\n'）：另起一行，ASCII代码是10
+
+**应用情况：**
+
+- Dos和Windows平台： 使用回车（CR）和换行（LF）两个字符来结束一行，回车+换行(CR+LF)，即“\r\n”；所以我们平时编写文件的回车符应该确切来说叫做回车换行符。
+- Mac 和 Linux平台：只使用换行（LF）一个字符来结束一行，即“\n”；
+
+​	许多 Windows 上的编辑器会悄悄把行尾的换行（LF）字符转换成回车（CR）和换行（LF），或在用户按下 Enter 键时，插入回车（CR）和换行（LF）两个字符。
+
+**警告显示：**
+
+```
+warning: in the working copy of '1.语言学习/C/常用内存函数.md', LF will be replaced by CRLF the next time Git touches it
 ```
 
