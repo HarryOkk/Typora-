@@ -15,6 +15,16 @@ update kzg_param_t set param_value='123456789012' where param_key='CPD_ID';
 #### 最佳实践
 
 ```c
+/*
+ ============================================================================
+ Name        : cpdid_write.c
+ Author      : HarryOkk
+ Version     :
+ Copyright   : HarryOkk
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,8 +32,8 @@ update kzg_param_t set param_value='123456789012' where param_key='CPD_ID';
 
 int main() {
     sqlite3 *db;
-    char new_cpdid[13];  // 为 null 结尾符预留一个位置
-    char sql[100];
+    char new_cpdid[13];  // 为字符串结尾符预留一个位置
+    char sql[150];
 
     int rc = sqlite3_open("/mnt/userdata/myDB/JS268_DB.db", &db);
     if (rc) {
@@ -43,7 +53,7 @@ int main() {
 
     fprintf(stdout, "CPDID：%s\nnew_cpdid's size is %zu\n", new_cpdid, strlen(new_cpdid));
 
-    snprintf(sql, sizeof(sql), "update kzg_param_t set param_value='%s' where param_key='CPD_ID';", new_cpdid);
+    snprintf(sql, sizeof(sql), "INSERT OR REPLACE INTO kzg_param_t (param_type, param_key, param_value) VALUES ('SYS_PARAM', 'CPD_ID', '%s');", new_cpdid);
 
     fprintf(stdout, "SQL: %s\n", sql);
 
@@ -59,7 +69,17 @@ int main() {
     fprintf(stdout, "success to close db\n");
     return 0;
 }
+
+
 ```
 
 #### 知识总结
 
+- **strcspn(new_cpdid, "\n")**：该函数返回字符数组中第一个\n的位置，后续便可以根据其返回值索引到\n
+- **new_cpdid[strcspn(new_cpdid, "\n")] = '\0';**在字符数组中间添加\0。格式化输出的时候字符数组会被分成多个字符串，并且只输出第一个字符串
+- 字符数组和字符串的关系：
+  - 字符数组用于存储字符类型变量
+  - 字符串一般指const char类型，为字符类型的组合，并以NULL（'\0'）结尾
+- snprintf(sql, sizeof(sql), "update kzg_param_t set param_value='%s' where param_key='CPD_ID';", new_cpdid);
+  - 向一个缓冲区（字符数组）格式化输入一个字符串，并且因为可以指定缓冲区的大小，在Linux中使用非常安全
+- 因目标Linux设备有的需要更新记录，有些需要插入记录，所以使用`INSERT OR REPLACE INTO kzg_param_t (param_type, param_key, param_value) VALUES ('SYS_PARAM', 'CPD_ID', '%s');`并且注意，每个字段的名称和值都要在SQL中指出
