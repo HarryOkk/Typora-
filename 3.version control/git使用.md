@@ -84,7 +84,7 @@ git push origin main
 
 #### 1. PC本地git代理端口号与远端不一致，导致访问github仓库地址失败
 
-**现象：**
+**报错显示：**
 
 ![image-20240104104605319](D:\my_documents\学习文件\笔记\图片\image-20240104104605319.png)
 
@@ -121,6 +121,27 @@ github显示上传内容单个文件的大小，单个文件大小不能超过50
 remote: warning: File 4.IDE工具/4.1交叉编译/1. eclipse安装与使用/jre-8u191-windows-x64.exe is 71.16 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
 ```
 
+**解决办法：**
+
+> ​	注意，git跟踪的是文件的变化，而不仅仅是文件的存在与否。所以大文件如果本地提交过，上传github的时候都会把这部分文件带上去。
+
+撤销包含大文件的提交：
+
+```shell
+# 查看本地提交日志
+$ git log
+# 找到提交大文件的记录，并记录其commit id，使用git reset回退到提交大文件之前的提交
+$ git reset 9fc3bcd9
+# 重新提交
+$ git add .
+$ git commit -m '注释'
+$ git push
+```
+
+本地切换分支
+
+
+
 #### 3. 换行替换警告
 
 **解释：**
@@ -143,3 +164,4 @@ CR/LF是不同操作系统上使用的换行符：
 warning: in the working copy of '1.语言学习/C/常用内存函数.md', LF will be replaced by CRLF the next time Git touches it
 ```
 
+#### 4. 大文件上传告警
