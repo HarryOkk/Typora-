@@ -1,0 +1,1 @@
+[linux：SUID、SGID详解 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/166468556)
