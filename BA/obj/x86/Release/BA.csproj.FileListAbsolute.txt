@@ -1,0 +1,7 @@
+F:\BA\BA\BA\bin\Release\BA.exe
+F:\BA\BA\BA\bin\Release\BA.pdb
+F:\BA\BA\BA\obj\x86\Release\BA.Form1.resources
+F:\BA\BA\BA\obj\x86\Release\BA.Properties.Resources.resources
+F:\BA\BA\BA\obj\x86\Release\BA.csproj.GenerateResource.Cache
+F:\BA\BA\BA\obj\x86\Release\BA.exe
+F:\BA\BA\BA\obj\x86\Release\BA.pdb

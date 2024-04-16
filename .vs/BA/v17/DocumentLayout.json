@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E59F92A4-0063-4657-8748-CE7222891BA2}|BA\\BA.csproj|d:\\my_code\\ba\\ba-\u6545\u969C\u002B\u7EDF\u8BA1\\ba\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E59F92A4-0063-4657-8748-CE7222891BA2}|BA\\BA.csproj|solutionrelative:ba\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E59F92A4-0063-4657-8748-CE7222891BA2}|BA\\BA.csproj|d:\\my_code\\ba\\ba-\u6545\u969C\u002B\u7EDF\u8BA1\\ba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E59F92A4-0063-4657-8748-CE7222891BA2}|BA\\BA.csproj|solutionrelative:ba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E59F92A4-0063-4657-8748-CE7222891BA2}|BA\\BA.csproj|d:\\my_code\\ba\\ba-\u6545\u969C\u002B\u7EDF\u8BA1\\ba\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E59F92A4-0063-4657-8748-CE7222891BA2}|BA\\BA.csproj|solutionrelative:ba\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E59F92A4-0063-4657-8748-CE7222891BA2}|BA\\BA.csproj|d:\\my_code\\ba\\ba-\u6545\u969C\u002B\u7EDF\u8BA1\\ba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E59F92A4-0063-4657-8748-CE7222891BA2}|BA\\BA.csproj|solutionrelative:ba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\BA\\Form1.cs",
+              "RelativeDocumentMoniker": "BA\\Form1.cs",
+              "ToolTip": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\BA\\Form1.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "BA\\Form1.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:03:15.702Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\BA\\Program.cs",
+              "RelativeDocumentMoniker": "BA\\Program.cs",
+              "ToolTip": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\BA\\Program.cs",
+              "RelativeToolTip": "BA\\Program.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAADgvw0AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:02:44.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\BA\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "BA\\Form1.Designer.cs",
+              "ToolTip": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\BA\\Form1.Designer.cs",
+              "RelativeToolTip": "BA\\Form1.Designer.cs",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAAAMkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:02:14.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\BA\\Form1.cs",
+              "RelativeDocumentMoniker": "BA\\Form1.cs",
+              "ToolTip": "D:\\my_code\\BA\\BA-\u6545\u969C\u002B\u7EDF\u8BA1\\BA\\Form1.cs",
+              "RelativeToolTip": "BA\\Form1.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:02:04.092Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

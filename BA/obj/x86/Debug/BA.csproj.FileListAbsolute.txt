@@ -1,0 +1,15 @@
+F:\BA\BA\BA\obj\x86\Debug\BA.Form1.resources
+F:\BA\BA\BA\obj\x86\Debug\BA.Properties.Resources.resources
+F:\BA\BA\BA\obj\x86\Debug\BA.csproj.GenerateResource.Cache
+F:\BA\BA\BA\bin\Debug\BA.exe
+F:\BA\BA\BA\bin\Debug\BA.pdb
+F:\BA\BA\BA\obj\x86\Debug\BA.exe
+F:\BA\BA\BA\obj\x86\Debug\BA.pdb
+D:\0开发文件\BA\BA\BA\BA\obj\x86\Debug\BA.exe
+D:\0开发文件\BA\BA\BA\BA\obj\x86\Debug\BA.pdb
+D:\0开发文件\BA\BA\BA\BA\bin\Debug\BA.exe
+D:\0开发文件\BA\BA\BA\BA\bin\Debug\BA.pdb
+D:\0开发文件\BA\BA\BA\BA\obj\x86\Debug\BA.Form1.resources
+D:\0开发文件\BA\BA\BA\BA\obj\x86\Debug\BA.Properties.Resources.resources
+D:\0开发文件\BA\BA\BA\BA\obj\x86\Debug\BA.csproj.GenerateResource.Cache
+D:\0开发文件\BA\BA\BA\BA\obj\x86\Debug\BA.csprojResolveAssemblyReference.cache
