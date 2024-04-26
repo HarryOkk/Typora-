@@ -43,3 +43,30 @@
   - 针对每种异常都做对应的反馈处理
   - 预留一种万金油异常处理（通常用else或者try）
 
+## 2. 常用空间及其使用
+
+
+
+## 3. 常用类型及其转换
+
+### 3.1 类型
+
+**decimal：**十进制浮点类型，适用于高精度计算场景
+
+**ushort：**unsigned short integer，无符号16位整数，0~65535；可通过Convert.ToUInt16()将其他类型转换成ushort
+
+### 3.2 显式类型转换
+
+**decimal to byte：**
+
+```c#
+# Convert类中确实没有直接将
+decimal decimalValue = 123.45m;
+int intValue = Convert.ToInt32(decimalValue); // 将 decimal 转换为 int
+byte byteValue = Convert.ToByte(intValue);    // 将 int 转换为 byte
+```
+
+## 4. 常用关键字
+
+**^：**按位异或
+

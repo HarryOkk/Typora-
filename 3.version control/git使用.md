@@ -8,6 +8,8 @@
 
 ![image-20240- 104100403751](D:\my_documents\学习文件\笔记\图片\image-20240104100403751.png)
 
+注意创建仓库的时候不要选择自动创建README.md文件，因为创建这个文件就会导致自动提交一次，后面本地提交的时候会出问题
+
 ---
 
 **复制仓库的URL**
@@ -48,6 +50,28 @@ git remote add origin https://github.com/HarryOkk/Typora-.git
 git push -u origin main
 ```
 
+**【注】如果在github上创建仓库时选择了README.md文件**
+
+依次键入以下命令：
+
+> 1. 先拉取云端分机，并忽略冲突
+> 2. 本地重新进行提交
+
+```shell
+#git 初始化
+git init
+#将目录下所有文件添加到路径
+git add .
+#提交到本地仓库，自动创建默认分支master
+git commit -m '第一次提交'
+#添加远程仓库（使用前面复制的GitHub仓库URL）
+git remote add origin https://github.com/HarryOkk/Typora-.git
+#从远程仓库拉取，并忽略不相关的历史
+git pull origin master --allow-unrelated-histories
+#提交本地内容到远端分支
+git push -u origin master
+```
+
 ## 2. 新建仓库之后后续如何提交和推送？
 
 **第一步还是在文件目录下本地打开'git bash'**
@@ -80,7 +104,95 @@ git add .
 git push origin main
 ```
 
-## 4. 常见问题
+
+
+## 4. 如何合并github上的两个分支
+
+### 4.1 合并远程两个分支中的内容
+
+> 将**master**分支中的内容合并到**main**分支，并在main分支上创建一个合并提交
+>
+> 这里面用的方法还是通过拉取到本地合并再提交的方式
+
+1、首先确定本地分支情况
+
+```shell
+git branch -a
+```
+
+2、假设当前分支为master，拉取当前分支最新的代码
+
+```shell
+git pull
+```
+
+3、如果本地只有你自己的分支，这时候你需要创建main分支，并切换到main
+
+```shell
+git checkout -b main
+```
+
+4、本地git创建好main分支之后，拉取远端对应分支的代码
+
+```shell
+git pull origin main
+```
+
+5、将master分支合并到main分支上（注意都是本地分支）
+
+```shell
+git merge master
+```
+
+6、合并后的本地main分支内容提交到远端
+
+```shell
+git push origin main
+```
+
+7、**关于冲突：**
+
+代码的合并过程可能会出现意想不到的冲突，比如：
+
+- 两个分支对同一个文件做了不同的修改
+- 同一段代码两个分支做了不同的修改
+
+```shell
+# 查看冲突文件
+git satus
+# 手动编辑冲突文件解决冲突
+
+# 将解决冲突后的文件标记为已解决
+git add
+# 继续合并过程
+git merge --continue
+```
+
+### 4.2 将远端分支修改的内容添加到本地分支
+
+场景：当团队成员在远程仓库上创建了新的分支并进行了更改，您可能需要将这些更改合并到本地仓库中。
+
+```shell
+git fetch origin
+git merge origin/remote-brach
+```
+
+
+
+## 5. 如何从远程仓库中拉取特定分支的更新？
+
+> 场景：在本地和远端默认分支建立好连接之后，想在本地创建另外一个分支对应远端另外一个分支，从而拉取对应远端分支的代码
+
+```shell
+# 从远端仓库拉取特定分支的更新
+git fetch origin <远端分支名称>
+# 本地切换分支并与远端分支关联
+git checkout -b <本地分支名称> origin/<远端分支名称>
+```
+
+
+
+## 常见问题
 
 #### 1. PC本地git代理端口号与远端不一致，导致访问github仓库地址失败
 
