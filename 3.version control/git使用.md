@@ -190,7 +190,31 @@ git fetch origin <远端分支名称>
 git checkout -b <本地分支名称> origin/<远端分支名称>
 ```
 
+## 6. 如何查看本地分支对应的远端分支情况
 
+- **查看本地分支**:
+
+```text
+git branch
+```
+
+- **查看远程分支**:
+
+```text
+git branch -r
+```
+
+- **查看所有分支**:
+
+```text
+git branch -a
+```
+
+- **查看本地和远程分支的关联情况**:
+
+```text
+git branch -vv
+```
 
 ## 常见问题
 
