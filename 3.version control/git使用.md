@@ -1,38 +1,30 @@
 ## 1. 如何在github上新建一个仓库
 
-<img src="D:\my_documents\学习文件\笔记\图片\image-20240104100259658.png" alt="image-20240104100259658" style="zoom:33%;" />
+适用场景：github无仓库，需要创建远程仓库并和本地代码建立关联
 
 ---
 
-**github创建仓库**
-
-![image-20240- 104100403751](D:\my_documents\学习文件\笔记\图片\image-20240104100403751.png)
+### 1.1 **github创建仓库**
 
 注意创建仓库的时候不要选择自动创建README.md文件，因为创建这个文件就会导致自动提交一次，后面本地提交的时候会出问题
 
 ---
 
-**复制仓库的URL**
-
-![image-20240104100956730](D:\my_documents\学习文件\笔记\图片\image-20240104100956730.png)
+### 1.2**复制仓库的URL**
 
 ---
 
 
 
-**PC本地进入仓库的文件目录：**
-
-![image-20240104100439675](D:\my_document\笔记\Typora-\6.图片image-20240104100439675.png)
+### 1.3 **PC本地进入仓库的文件目录：**
 
 ---
 
-**鼠标右键打开**`git bash`
-
-![image-20240104100553164](D:\my_documents\学习文件\笔记\图片\image-20240104100553164.png)
+### 1.4**鼠标右键打开**`git bash`
 
 ---
 
-**依次键入以下命令：**
+### 1.5 **依次键入以下命令：**                                   
 
 > 1. 先提交（commit）到本地仓库之后再推送（push）到远端（github）
 > 2. 本地提交的时候要填入message（提交日志信息）
@@ -50,11 +42,11 @@ git remote add origin https://github.com/HarryOkk/Typora-.git
 git push -u origin main
 ```
 
-**【注】如果在github上创建仓库时选择了README.md文件**
+### 1.6**【异常说明】如果在github上创建仓库时选择了README.md文件**
 
 依次键入以下命令：
 
-> 1. 先拉取云端分机，并忽略冲突
+> 1. 先拉取云端分支，并忽略冲突
 > 2. 本地重新进行提交
 
 ```shell
@@ -74,6 +66,8 @@ git push -u origin master
 
 ## 2. 新建仓库之后后续如何提交和推送？
 
+### 2.1 在原有分支上提交
+
 **第一步还是在文件目录下本地打开'git bash'**
 
 **键入以下命令：**
@@ -86,6 +80,22 @@ git commit -m '本次提交日志的描述'
 # 推送到远端仓库（github）
 git push
 ```
+
+### 2.2 在新建分支上提交
+
+```shell
+# 本地新建分支
+git branch new_feature
+# 切换到new_feature
+git checkout new_fearure
+# 添加并提交当前内容
+git add .
+git commit -m ''
+# 提交到远端的新分支（新分支在远端自动创建）
+git push origin -u new_fearure
+```
+
+
 
 ## 3. 如何新建分支、切换分支，并将本地新建的分支提交到远端
 

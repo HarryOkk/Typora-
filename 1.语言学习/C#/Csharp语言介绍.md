@@ -39,6 +39,22 @@ C#必须在.NET虚机中运行（类似Java的JVM）
 4. 命名空间提供各种实用功能，包括文件输入输出、字符串控制、XML分析、Web应用程序框架和Windows窗体控件等等
 5. 命名空间常用来处理很多零碎的工作
 
+### .NET和.NET framework的区别
+
+> 参考博文：[C#中的.NET与.NET Framework区别_net和netframework的区别-CSDN博客](https://blog.csdn.net/WhoisPo/article/details/135148646)
+
+**.NET系列框架的发展顺序如下：**
+
+.NET framework -> .NET Core -> .NET
+**主要区别：**
+
+1. .NET framework不再维护，.NET在继续更新
+2. .NET framework只支持windows平台，而.NET支持跨平台（Windows、Linux、Macos、Android，在VS2022IDE中，可以通过项目配置选择）
+3. .NET framework中的包集成在一起，不需要手动添加；而.NET中的包需要手动在NuGet包管理器中添加
+4. 
+
+
+
 ## 3、Hello world
 
 ```c#
