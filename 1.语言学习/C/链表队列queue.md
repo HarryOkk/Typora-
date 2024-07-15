@@ -196,10 +196,6 @@ static void dm_cache_upload(void)
 }
 static void dm_timer_cb(uv_timer_t *req)
 {
-	dm_mgt_t *self = (dm_mgt_t*) (req->data);
-	dm_judge(self);
-	dm_gc_judge(self);
-	dm_comm_monitor(self);
 	dm_cache_upload();
 }
 
