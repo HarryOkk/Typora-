@@ -60,13 +60,11 @@ ctrl + shift + -：前进（不方便，修改快捷键为ctrl + →）
 
 ctrl + Alt + -：后退（不方便，修改快捷键为ctrl + ←）
 
-ctrl + `(Tab上面)：打开/[隐藏命令行]()
+ctrl + `(Tab上面)：打开/隐藏命令行
 
 > 注意：
 >
 > ​	修改快捷键的界面：file → Preference → Keyboard Shortcuts
 >
 > ​	或者直接使用快捷键ctrl+k ctrl+s，即可快速打开快捷键设置界面
->
-> 
 
