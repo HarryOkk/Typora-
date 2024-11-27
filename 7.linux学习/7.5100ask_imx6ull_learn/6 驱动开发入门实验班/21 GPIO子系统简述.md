@@ -38,6 +38,8 @@
 
 ### 1.3 确定CPU中某一GPIO引脚在Linux中编号值的方法
 
+​	一般我们会查看原理图，然后通过原理图确认CPU中的GPIO引脚编号，再转换成Linux中的引脚编号。这样就可以在驱动程序中直接操作引脚了。
+
 ###### a. 分组方式
 
 ```shell
@@ -49,3 +51,6 @@ cat /sys/kernel/debug/gpio # 在该文件中有对于Linux-gpio编号和CPU-gpio
 ```shell
 cd /sys/class/gpio # 在该目录下，每个文件夹名称为cpu某一组gpio的首个引脚编号
 ```
+
+## 2 子系统方式使用GPIO
+
