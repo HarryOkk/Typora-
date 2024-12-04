@@ -54,3 +54,41 @@ cd /sys/class/gpio # 在该目录下，每个文件夹名称为cpu某一组gpio�
 
 ## 2 子系统方式使用GPIO
 
+### 2.1 GPIO子系统函数
+
+###### a.GPIO子系统函数有新、老两套：
+
+| **descriptor-based**       | **legacy**            |
+| -------------------------- | --------------------- |
+| **获得GPIO**               |                       |
+| **gpiod_get**              | gpio_request          |
+| **gpiod_get_index**        |                       |
+| **gpiod_get_array**        | gpio_request_array    |
+| **devm_gpiod_get**         |                       |
+| **devm_gpiod_get_index**   |                       |
+| **devm_gpiod_get_array**   |                       |
+| **设置方向**               |                       |
+| **gpiod_direction_input**  | gpio_direction_input  |
+| **gpiod_direction_output** | gpio_direction_output |
+| **读值、写值**             |                       |
+| **gpiod_get_value**        | gpio_get_value        |
+| **gpiod_set_value**        | gpio_set_value        |
+| **释放GPIO**               |                       |
+| **gpio_free**              | gpio_free             |
+| **gpiod_put**              | gpio_free_array       |
+| **gpiod_put_array**        |                       |
+| **devm_gpiod_put**         |                       |
+| **devm_gpiod_put_array**   |                       |
+
+###### b.注意
+
+- 申请gpio即占用gpio资源（gpio_request），使用完需要释放gpio（gpio_free）
+- 设置gpio的值需要1、申请gpio引脚（gpio_set_value）；2、设置方向为输出（gpio_direction_output）；3、释放gpio（gpio_free）
+- 读取gpio的值不需要申请，直接运行gpio_get_value
+- 设置gpio方向为输入后（gpio_direction_input），就可以设置使用gpio对应的中断了，无需申请、释放
+- **每个函数中使用gpio最好都包含申请和释放的过程，这样不容易弄混**
+
+> 每次使用都包含申请和释放过程不好吗？
+
+### 2.2 注意
+
